@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 output/ui/
 REPORT_NOTES.md
+submission/

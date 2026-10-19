@@ -6,6 +6,9 @@ both back, and comparing three modes of operation.
 Advanced Cryptography I, MSIS Semester 1.
 Mian Salman Hassan and Muhammad Asif.
 
+**Live app: https://des-video-encryption-crypto.streamlit.app/**
+(hosted free, so the first load may take a moment while it wakes up)
+
 ![The interface](output/images/ui_screenshot.png)
 
 ## What this does
