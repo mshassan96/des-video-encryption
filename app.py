@@ -18,7 +18,8 @@ OUTDIR = os.path.join("output", "ui")
 
 st.set_page_config(page_title="DES Video Encryption", page_icon="*", layout="wide")
 st.title("DES Video and Audio Encryption")
-st.caption("Encrypts the picture and the sound of a clip with DES, then decrypts both back.")
+st.caption("Encrypts the picture and the sound of a clip with DES, then decrypts both back. "
+           "If this page took a while to load, the app was asleep and had to start up.")
 
 # ------------------------------------------------------------------ controls
 with st.sidebar:
@@ -29,14 +30,16 @@ with st.sidebar:
     key_text = st.text_input("Key (exactly 8 characters)", "salman12", max_chars=8)
 
     st.divider()
-    frames = st.slider("Frames", 5, 60, 20,
+    frames = st.slider("Frames", 5, 30, 10,
                        help="More frames means a longer video and a longer wait.")
-    size = st.select_slider("Frame size", ["64x48", "96x72", "128x96", "160x120", "240x180"],
-                            value="96x72")
+    size = st.select_slider("Frame size", ["64x48", "96x72", "128x96"],
+                            value="64x48")
     w, h = (int(v) for v in size.split("x"))
 
     st.divider()
-    st.caption("This DES runs at about 33 KB/s, so keep the numbers small.")
+    st.caption("This DES is written in pure python and runs at roughly 30 KB/s, "
+               "so keep the numbers small. The limits here are lower than the local "
+               "version because this server is shared and slower than a laptop.")
 
 # key validation
 key = key_text.encode()
